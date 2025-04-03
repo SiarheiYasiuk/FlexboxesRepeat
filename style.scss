@@ -1,196 +1,199 @@
 // =============================================
-// Обновленный SCSS с улучшенным дизайном
+// Главный файл стилей для карточек блога
 // =============================================
 
 /* 
- * Секция переменных содержит все настраиваемые параметры дизайна.
- * Это позволяет легко изменять внешний вид, редактируя значения в одном месте.
+ * Секция переменных - здесь хранятся все настраиваемые параметры
+ * Это позволяет легко изменять дизайн во всем проекте
  */
-$font-heading: "Playfair Display", serif; // Элегантный шрифт для заголовков
-$font-body: "Poppins", sans-serif; // Читаемый шрифт для основного текста
 
-// Карта (map) цветов для системы дизайна
-$colors: (
-    primary: #3a86ff,
-    // Основной синий цвет
-    secondary: #8338ec,
-    // Вторичный фиолетовый
-    text: #2d3436,
-    // Цвет текста (темно-серый)
-    light-bg: #f8f9fa,
-    // Светлый фон страницы
-    gray: #636e72,
-    // Серый для второстепенного текста
-    white: #ffffff,
-    // Чистый белый
-    frame: #e0f3ff,
+// Шрифты (подключаются через Google Fonts)
+$font-heading: 'Playfair Display', serif; // Красивый шрифт с засечками для заголовков
+$font-body: 'Poppins', sans-serif;       // Чистый беззасечный шрифт для основного текста
 
-    // Голубой цвет для рамки
-    // Цвета категорий (используются для бейджей)
-    travel: #3a86ff,
-    // Синий
-    tech: #8338ec,
-    // Фиолетовый
-    review: #ff006e,
-    // Розовый
-    exercise: #fb5607,
-    // Оранжевый
-    tutorial: #ffbe0b,
-    // Желтый
-);
+// Основные цвета проекта
+$color-primary: #3a86ff;    // Основной синий цвет (кнопки, акценты)
+$color-secondary: #8338ec;  // Дополнительный фиолетовый цвет
+$color-text: #2d3436;       // Цвет основного текста (темно-серый)
+$color-light-bg: #f8f9fa;   // Светлый фон страницы
+$color-gray: #636e72;       // Серый цвет для второстепенного текста
+$color-white: #ffffff;      // Чистый белый цвет
+$color-frame: #e0f3ff;      // Голубой цвет для рамки вокруг контента
+
+// Цвета категорий (используются для бейджей)
+$color-travel: #3a86ff;     // Синий для путешествий
+$color-tech: #8338ec;       // Фиолетовый для технологий
+$color-review: #ff006e;     // Ярко-розовый для обзоров
+$color-exercise: #fb5607;   // Оранжевый для упражнений
+$color-tutorial: #ffbe0b;   // Желтый для обучающих материалов
 
 // Размеры и эффекты
-$radius: 12px; // Базовый радиус скругления
-$shadow: 0 8px 20px rgba(0, 0, 0, 0.1); // Тень средней интенсивности
-$card-max-width: 350px; // Максимальная ширина карточки
-$image-height: 220px; // Высота изображений в карточках
-$frame-width: 8px; // Толщина рамки вокруг страницы
+$radius: 12px;              // Базовый радиус скругления углов
+$shadow: 0 8px 20px rgba(0, 0, 0, 0.1); // Тень для карточек
+$card-max-width: 350px;     // Максимальная ширина одной карточки
+$image-height: 220px;       // Фиксированная высота изображений в карточках
+$frame-width: 8px;         // Толщина декоративной рамки вокруг страницы
 
 /* 
-  * Базовые стили сбрасывают стандартные настройки браузера
-  * и задают общие параметры страницы
-  */
+ * Базовые стили - сброс стандартных настроек и общие параметры
+ */
+
+// Сброс стандартных стилей браузера
 * {
-    box-sizing: border-box; // Границы включаются в расчет размеров
-    margin: 0; // Убираем внешние отступы
-    padding: 0; // Убираем внутренние отступы
+    box-sizing: border-box;  // Границы включаются в общие размеры элемента
+    margin: 0;              // Убираем внешние отступы
+    padding: 0;             // Убираем внутренние отступы
 }
 
+// Основные стили страницы
 body {
-    font-family: $font-body; // Основной шрифт
-    font-weight: 400; // Обычная толщина
-    line-height: 1.7; // Межстрочный интервал
-    color: map-get($colors, text); // Цвет текста из карты
-    background-color: #f5fbff; // Светло-голубой фон страницы
-    padding: 2rem; // Отступы по краям
+    font-family: $font-body;    // Основной шрифт для текста
+    font-weight: 400;          // Нормальная толщина шрифта
+    line-height: 1.7;          // Межстрочный интервал для лучшей читаемости
+    color: $color-text;        // Цвет текста из переменной
+    background-color: #f5fbff; // Светло-голубой фон всей страницы
+    padding: 2rem;            // Отступы от краев окна браузера
 }
 
 /* 
-  * Декоративная рамка вокруг основного контента 
-  * с эффектом "двойной границы" через box-shadow
-  */
+ * Декоративная рамка вокруг основного контента
+ * Создает эффект "плавающего" контейнера
+ */
 .page-frame {
-    border: $frame-width solid map-get($colors, frame); // Основная рамка
-    border-radius: $radius * 2; // Увеличенный радиус скругления
-    background-color: map-get($colors, white); // Белый фон внутри рамки
-    box-shadow: 0 0 0 $frame-width rgba(map-get($colors, primary), 0.1); // Вторичная "рамка" через тень
-    padding: 2rem; // Внутренние отступы
-    max-width: 1400px; // Максимальная ширина
-    margin: 0 auto; // Центрирование
+    border: $frame-width solid $color-frame;       // Сплошная рамка
+    border-radius: $radius * 2;                   // Скругленные углы (в 2 раза больше базового)
+    background-color: $color-white;               // Белый фон внутри рамки
+    box-shadow: 0 0 0 $frame-width rgba($color-primary, 0.1); // Вторая "рамка" через тень
+    padding: 2rem;                               // Внутренние отступы
+    max-width: 1400px;                           // Максимальная ширина
+    margin: 0 auto;                              // Центрирование по горизонтали
 }
 
 /* 
-  * Основной контейнер ограничивает ширину контента
-  * и центрирует его внутри рамки
-  */
+ * Основной контейнер для контента
+ * Ограничивает ширину и центрирует содержимое
+ */
 .main-container {
-    max-width: 1200px; // Оптимальная ширина для читаемости
-    margin: 0 auto; // Центрирование
+    max-width: 1200px;    // Оптимальная ширина для удобного чтения
+    margin: 0 auto;       // Автоматические отступы по бокам для центрирования
 }
 
 /* 
-  * Сетка карточек использует flexbox для адаптивного расположения
-  */
+ * Сетка карточек - использует flexbox для адаптивного расположения
+ */
 .cards {
-    display: flex; // Flex-контейнер
-    flex-wrap: wrap; // Перенос на новую строку
-    gap: 2rem; // Расстояние между карточками
-    justify-content: center; // Центрирование
-    padding: 1rem 0; // Вертикальные отступы
+    display: flex;           // Включаем flex-расположение
+    flex-wrap: wrap;        // Разрешаем перенос на новую строку
+    gap: 2rem;              // Расстояние между карточками
+    justify-content: center; // Центрируем карточки по горизонтали
+    padding: 1rem 0;        // Вертикальные отступы сверху и снизу
 }
 
 /* 
-  * Стили отдельной карточки с эффектами при наведении
-  */
+ * Стили отдельной карточки
+ * Блок с изображением, заголовком, текстом и датой
+ */
 .card {
-    flex: 1 1 300px; // Гибкие размеры (основа 300px)
-    max-width: $card-max-width; // Максимальная ширина
-    background: map-get($colors, white); // Белый фон
-    border-radius: $radius; // Скругленные углы
-    box-shadow: $shadow; // Тень
-    overflow: hidden; // Обрезаем выходящее за границы
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); // Плавная анимация
-    border: 1px solid rgba(map-get($colors, primary), 0.1); // Тонкая граница
+    flex: 1 1 300px;        // Гибкие размеры (основа 300px)
+    max-width: $card-max-width; // Ограничение максимальной ширины
+    background: $color-white;   // Белый фон карточки
+    border-radius: $radius;    // Скругленные углы
+    box-shadow: $shadow;       // Тень для эффекта "приподнятости"
+    overflow: hidden;         // Скрываем содержимое, выходящее за границы
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); // Плавная анимация всех свойств
+    border: 1px solid rgba($color-primary, 0.1); // Тонкая полупрозрачная граница
 
     // Эффекты при наведении курсора
     &:hover {
-        transform: translateY(-8px); // Поднимаем карточку
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15); // Усиливаем тень
+        transform: translateY(-8px); // Карточка "поднимается" на 8px
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15); // Усиленная тень
     }
 
-    // Стили для изображения внутри карточки
+    // Изображение внутри карточки
     &__image {
-        width: 100%; // Занимает всю ширину
+        width: 100%;         // Занимает всю ширину родителя
         height: $image-height; // Фиксированная высота
-        object-fit: cover; // Заполнение с сохранением пропорций
-        display: block; // Убираем лишнее пространство снизу
-        background: linear-gradient(
-            45deg,
-            #f5f7fa,
-            #e4e8eb
-        ); // Градиент-заглушка
+        object-fit: cover;   // Заполнение области с сохранением пропорций
+        display: block;     // Убирает лишнее пространство снизу
+        background: linear-gradient(45deg, #f5f7fa, #e4e8eb); // Градиент-заглушка если изображение не загрузится
     }
 
     // Текстовая часть карточки
     &__body {
-        padding: 1.8rem; // Внутренние отступы
+        padding: 1.8rem;    // Внутренние отступы
     }
 
-    // Стили для бейджа категории
+    // Бейдж категории (цветной прямоугольник с названием категории)
     &__badge {
-        display: inline-block;
-        padding: 0.35rem 0.8rem;
-        color: map-get($colors, white);
-        border-radius: $radius / 2;
-        font-size: 0.75rem;
-        font-weight: 600; // Полужирный
+        display: inline-block; // Отображается как блок, но в строке
+        padding: 0.35rem 0.8rem; // Внутренние отступы
+        color: $color-white;  // Белый текст
+        border-radius: $radius / 2; // Скругление углов (вдвое меньше основного)
+        font-size: 0.75rem;  // Мелкий шрифт
+        font-weight: 600;    // Полужирное начертание
         letter-spacing: 0.5px; // Разряженные буквы
-        text-transform: uppercase; // Верхний регистр
-        margin-bottom: 1rem;
+        text-transform: uppercase; // Все буквы заглавные
+        margin-bottom: 1rem; // Отступ снизу
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Легкая тень
 
-        // Модификаторы цвета для разных категорий
-        &--travel {
-            background-color: map-get($colors, travel);
-        }
-        &--tech {
-            background-color: map-get($colors, tech);
-        }
-        &--review {
-            background-color: map-get($colors, review);
-        }
-        &--exercise {
-            background-color: map-get($colors, exercise);
-        }
-        &--tutorial {
-            background-color: map-get($colors, tutorial);
-        }
+        // Модификаторы для разных категорий
+        &--travel { background-color: $color-travel; }
+        &--tech { background-color: $color-tech; }
+        &--review { background-color: $color-review; }
+        &--exercise { background-color: $color-exercise; }
+        &--tutorial { background-color: $color-tutorial; }
     }
 
-    // Стили заголовка карточки
+    // Заголовок карточки
     &__title {
-        font-family: $font-heading; // Специальный шрифт
-        font-size: 1.4rem;
-        font-weight: 700; // Жирный
-        margin-bottom: 0.8rem;
-        color: darken(map-get($colors, text), 10%); // Темнее основного
-        line-height: 1.3; // Уплотненный межстрочный
+        font-family: $font-heading; // Специальный шрифт для заголовков
+        font-size: 1.4rem;         // Размер шрифта
+        font-weight: 700;          // Жирное начертание
+        margin-bottom: 0.8rem;      // Отступ снизу
+        color: darken($color-text, 10%); // Темнее основного текста
+        line-height: 1.3;           // Уменьшенный межстрочный интервал
     }
 
-    // Стили описания
+    // Текст описания (необязательное поле)
     &__desc {
-        color: map-get($colors, gray);
-        margin-bottom: 1.2rem;
-        font-size: 0.95rem;
-        line-height: 1.6; // Удобочитаемый интервал
+        color: $color-gray;        // Серый цвет
+        margin-bottom: 1.2rem;     // Отступ снизу
+        font-size: 0.95rem;        // Размер чуть меньше основного
+        line-height: 1.6;          // Увеличенный интервал для читаемости
     }
 
-    // Стили даты публикации
+    // Дата публикации
     &__date {
-        font-size: 0.8rem;
-        color: lighten(map-get($colors, gray), 15%); // Светлее основного
-        display: block; // На отдельной строке
-        font-weight: 300; // Тонкий
-        letter-spacing: 0.5px; // Разряженные буквы
+        font-size: 0.8rem;         // Мелкий шрифт
+        color: lighten($color-gray, 15%); // Светло-серый
+        display: block;            // Отображается на новой строке
+        font-weight: 300;         // Тонкое начертание
+        letter-spacing: 0.5px;    // Разряженные буквы
+    }
+}
+
+/* 
+ * Адаптивные стили для мобильных устройств (ширина экрана до 768px)
+ */
+@media (max-width: 768px) {
+    // Уменьшаем отступы на маленьких экранах
+    body {
+        padding: 1rem;
+    }
+    
+    // Делаем рамку тоньше и уменьшаем внутренние отступы
+    .page-frame {
+        border-width: 4px;
+        padding: 1rem;
+    }
+    
+    // Карточки занимают всю ширину на мобильных
+    .card {
+        flex: 1 1 100%;
+        
+        // Уменьшаем отступы внутри карточки
+        &__body {
+            padding: 1.4rem;
+        }
     }
 }
