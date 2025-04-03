@@ -3,166 +3,171 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blog Cards - SCSS Structure</title>
+        <title>Blog Cards - Enhanced Design</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
-        <main class="main-container">
-            <div class="cards">
-                <!-- Card 1 - Travel -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Iceland landscape"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--travel"
-                            >TRAVEL</span
-                        >
-                        <h2 class="card__title">Travel spots in Iceland</h2>
-                        <p class="card__desc">
-                            Delectus sint nisi ut accusandae molestiae. Qui iure
-                            accusantium esse temporibus ei.
-                        </p>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-
-                <!-- Card 2 - Tech -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Drone in flight"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--tech">TECH</span>
-                        <h2 class="card__title">
-                            Drone photography on a space budget
-                        </h2>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-
-                <!-- Card 3 - Review -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Fountain pen"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--review"
-                            >REVIEW</span
-                        >
-                        <h2 class="card__title">The best pen I've ever used</h2>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-
-                <!-- Card 4 - Review -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Backpack on table"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--review"
-                            >REVIEW</span
-                        >
-                        <h2 class="card__title">
-                            Tech-focused travel backpack
-                        </h2>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-
-                <!-- Card 5 - Exercise -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Person rock climbing"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--exercise"
-                            >EXERCISE</span
-                        >
-                        <h2 class="card__title">Climbing as exercise</h2>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-
-                <!-- Card 6 - Tech -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Camera equipment"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--tech">TECH</span>
-                        <h2 class="card__title">
-                            The move to mirrorless cameras
-                        </h2>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-
-                <!-- Card 7 - Tutorial -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Coffee cup"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--tutorial"
-                            >TUTORIAL</span
-                        >
-                        <h2 class="card__title">
-                            How to make the perfect cup of coffee
-                        </h2>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-
-                <!-- Card 8 - Review -->
-                <article class="card">
-                    <img
-                        class="card__image"
-                        src="https://images.unsplash.com/photo-1585637071663-799845ad5212?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Desk organization"
-                    />
-                    <div class="card__body">
-                        <span class="card__badge card__badge--review"
-                            >REVIEW</span
-                        >
-                        <h2 class="card__title">
-                            Desk accessories to keep you organized
-                        </h2>
-                        <time class="card__date" datetime="2021-11-24"
-                            >November 24, 2021</time
-                        >
-                    </div>
-                </article>
-            </div>
-        </main>
+        <div class="page-frame">
+            <main class="main-container">
+                <div class="cards">
+                    <!-- Card 1 - Travel -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Iceland landscape"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--travel"
+                                >TRAVEL</span
+                            >
+                            <h2 class="card__title">Travel spots in Iceland</h2>
+                            <p class="card__desc">
+                                Delectus sint nisi ut accusandae molestiae. Qui iure
+                                accusantium esse temporibus ei.
+                            </p>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+    
+                    <!-- Card 2 - Tech -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Drone in flight"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--tech">TECH</span>
+                            <h2 class="card__title">
+                                Drone photography on a space budget
+                            </h2>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+    
+                    <!-- Card 3 - Review -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Fountain pen"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--review"
+                                >REVIEW</span
+                            >
+                            <h2 class="card__title">The best pen I've ever used</h2>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+    
+                    <!-- Card 4 - Review -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Backpack on table"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--review"
+                                >REVIEW</span
+                            >
+                            <h2 class="card__title">
+                                Tech-focused travel backpack
+                            </h2>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+    
+                    <!-- Card 5 - Exercise -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Person rock climbing"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--exercise"
+                                >EXERCISE</span
+                            >
+                            <h2 class="card__title">Climbing as exercise</h2>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+    
+                    <!-- Card 6 - Tech -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Camera equipment"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--tech">TECH</span>
+                            <h2 class="card__title">
+                                The move to mirrorless cameras
+                            </h2>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+    
+                    <!-- Card 7 - Tutorial -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Coffee cup"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--tutorial"
+                                >TUTORIAL</span
+                            >
+                            <h2 class="card__title">
+                                How to make the perfect cup of coffee
+                            </h2>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+    
+                    <!-- Card 8 - Review -->
+                    <article class="card">
+                        <img
+                            class="card__image"
+                            src="https://images.unsplash.com/photo-1585637071663-799845ad5212?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Desk organization"
+                        />
+                        <div class="card__body">
+                            <span class="card__badge card__badge--review"
+                                >REVIEW</span
+                            >
+                            <h2 class="card__title">
+                                Desk accessories to keep you organized
+                            </h2>
+                            <time class="card__date" datetime="2021-11-24"
+                                >November 24, 2021</time
+                            >
+                        </div>
+                    </article>
+                </div>
+            </main>
+        </div>
     </body>
 </html>
