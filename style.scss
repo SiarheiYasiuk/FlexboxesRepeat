@@ -1,0 +1,132 @@
+// =============================================
+// Main SCSS File - cards.scss
+// =============================================
+
+/* Variables */
+$colors: (
+    primary: #3a86ff,
+    secondary: #8338ec,
+    text: #333,
+    light-bg: #f8f9fa,
+    gray: #6c757d,
+    white: #fff,
+
+    // Category colors
+    travel: #3a86ff,
+    tech: #8338ec,
+    review: #ff006e,
+    exercise: #fb5607,
+    tutorial: #ffbe0b,
+);
+
+$radius: 8px;
+$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$card-max-width: 350px;
+$image-height: 200px;
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: map-get($colors, text);
+    background-color: map-get($colors, light-bg);
+    padding: 2rem;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cards Layout */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Card Component */
+.card {
+    flex: 1 1 300px;
+    max-width: $card-max-width;
+    background: map-get($colors, white);
+    border-radius: $radius;
+    box-shadow: $shadow;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__image {
+        width: 100%;
+        height: $image-height;
+        object-fit: cover;
+        display: block;
+        background-color: #eee;
+    }
+
+    &__body {
+        padding: 1.5rem;
+    }
+
+    &__badge {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        color: map-get($colors, white);
+        border-radius: $radius;
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+
+        &--travel {
+            background-color: map-get($colors, travel);
+        }
+        &--tech {
+            background-color: map-get($colors, tech);
+        }
+        &--review {
+            background-color: map-get($colors, review);
+        }
+        &--exercise {
+            background-color: map-get($colors, exercise);
+        }
+        &--tutorial {
+            background-color: map-get($colors, tutorial);
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: map-get($colors, text);
+    }
+
+    &__desc {
+        color: map-get($colors, gray);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+    &__date {
+        font-size: 0.8rem;
+        color: map-get($colors, gray);
+        display: block;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
